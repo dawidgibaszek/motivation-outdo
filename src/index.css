@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Instrument Sans", sans-serif;
+  --color-bg: #050505;
+  --color-fg: #FFFFFF;
+  --color-accent: #00FF41; /* Matrix green / Outdo vibe */
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-card: #0A0A0A;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+/* Custom Outdo-style classes */
+.brutalist-border {
+  @apply border-2 border-fg shadow-[4px_4px_0px_0px_rgba(255,255,255,1)];
+}
+
+.brutalist-button {
+  @apply bg-fg text-bg px-8 py-4 font-black uppercase tracking-tighter hover:bg-accent hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_rgba(0,255,65,1)] transition-all;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-bg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 hover:bg-white/20;
+}
