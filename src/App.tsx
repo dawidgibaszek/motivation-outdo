@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from './config/site';
-import { Zap, Target, Brain, Trash2, Plus, ArrowRight, BarChart3, ShieldAlert } from 'lucide-react';
+import { Zap, Trash2, Plus, ArrowRight, BarChart3 } from 'lucide-react';
 
 const App = () => {
   const [tasks, setTasks] = useState<{ id: number, text: string, completed: boolean }[]>([]);
