@@ -28,44 +28,44 @@ const App = () => {
   return (
     <div className="min-h-screen bg-bg text-fg font-sans selection:bg-accent selection:text-bg grain overflow-x-hidden">
       {/* Navigation */}
-      <nav className="py-6 px-8 md:px-16 flex justify-between items-center border-b border-white/5 sticky top-0 z-40 bg-bg/80 backdrop-blur-xl">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-accent rounded-sm flex items-center justify-center">
-             <Zap className="text-bg w-6 h-6 fill-current" />
+      <nav className="py-6 px-4 md:px-8 lg:px-16 flex justify-between items-center border-b border-white/5 sticky top-0 z-40 bg-bg/80 backdrop-blur-xl">
+        <div className="flex items-center gap-2 md:gap-3">
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-accent rounded-sm flex items-center justify-center">
+             <Zap className="text-bg w-4 h-4 md:w-6 md:h-6 fill-current" />
           </div>
-          <span className="text-2xl font-black tracking-tighter font-display">{siteConfig.name}</span>
+          <span className="text-lg md:text-2xl font-black tracking-tighter font-display">{siteConfig.name}</span>
         </div>
-        <div className="hidden md:flex gap-12 text-[10px] font-black uppercase tracking-[0.4em] opacity-40">
+        <div className="hidden lg:flex gap-12 text-[10px] font-black uppercase tracking-[0.4em] opacity-40">
            <a href="#system" className="hover:text-accent transition-colors">System</a>
            <a href="#planner" className="hover:text-accent transition-colors">Protokół</a>
            <a href="#stats" className="hover:text-accent transition-colors">Dane</a>
         </div>
-        <button className="bg-white text-black px-6 py-2 text-[10px] font-black uppercase tracking-widest hover:bg-accent transition-colors">
+        <button className="bg-white text-black px-4 md:px-6 py-2 text-[10px] font-black uppercase tracking-widest hover:bg-accent transition-colors">
           ZALOGUJ
         </button>
       </nav>
 
       <main>
         {/* Hero */}
-        <section className="pt-32 pb-48 px-8 md:px-16 max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <section className="pt-20 pb-24 md:pt-32 md:pb-48 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block text-accent text-[11px] font-black uppercase tracking-[0.5em] mb-12 border-l-2 border-accent pl-4">
+              <span className="inline-block text-accent text-[10px] md:text-[11px] font-black uppercase tracking-[0.3em] md:tracking-[0.5em] mb-8 md:mb-12 border-l-2 border-accent pl-4">
                 {siteConfig.hero.badge}
               </span>
-              <h1 className="text-7xl md:text-[140px] font-black leading-[0.85] mb-12 tracking-tighter whitespace-pre-line">
+              <h1 className="text-5xl md:text-7xl lg:text-[140px] font-black leading-[0.9] mb-8 md:mb-12 tracking-tighter whitespace-pre-line">
                 {siteConfig.hero.title}
               </h1>
-              <p className="text-xl text-white/40 leading-relaxed mb-16 max-w-xl">
+              <p className="text-lg md:text-xl text-white/40 leading-relaxed mb-12 md:mb-16 max-w-xl">
                 {siteConfig.hero.subtitle}
               </p>
-              <div className="flex flex-col sm:flex-row gap-6">
-                 <button className="brutalist-button">{siteConfig.hero.cta.text}</button>
-                 <button className="px-8 py-4 border border-white/20 text-[11px] font-black uppercase tracking-[0.3em] hover:bg-white/5 transition-all">
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
+                 <button className="brutalist-button w-full sm:w-auto text-center">{siteConfig.hero.cta.text}</button>
+                 <button className="px-6 md:px-8 py-4 border border-white/20 text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] hover:bg-white/5 transition-all w-full sm:w-auto">
                     {siteConfig.hero.secondaryCta.text}
                  </button>
               </div>
@@ -99,17 +99,17 @@ const App = () => {
         </section>
 
         {/* System Features */}
-        <section id="system" className="bg-white text-black py-48 px-8 md:px-16">
+        <section id="system" className="bg-white text-black py-24 md:py-48 px-4 md:px-8 lg:px-16">
            <div className="max-w-7xl mx-auto">
-              <h2 className="text-5xl md:text-[100px] font-black leading-none mb-32 tracking-tighter uppercase italic">
+              <h2 className="text-4xl md:text-5xl lg:text-[100px] font-black leading-none mb-16 md:mb-32 tracking-tighter uppercase italic">
                 {siteConfig.system.title}
               </h2>
-              <div className="grid md:grid-cols-3 gap-2 bg-black border-2 border-black">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 bg-black border-2 border-black">
                 {siteConfig.system.features.map((f) => (
-                  <div key={f.id} className="bg-white p-16 hover:bg-accent transition-colors group cursor-default">
-                    <span className="text-6xl font-black opacity-10 group-hover:opacity-100 transition-opacity mb-8 block">{f.id}</span>
-                    <h4 className="text-3xl font-black mb-8 uppercase leading-tight">{f.title}</h4>
-                    <p className="text-sm font-medium leading-relaxed opacity-60 group-hover:opacity-100">{f.desc}</p>
+                  <div key={f.id} className="bg-white p-8 md:p-16 hover:bg-accent transition-colors group cursor-default">
+                    <span className="text-4xl md:text-6xl font-black opacity-10 group-hover:opacity-100 transition-opacity mb-4 md:mb-8 block">{f.id}</span>
+                    <h4 className="text-xl md:text-3xl font-black mb-4 md:mb-8 uppercase leading-tight">{f.title}</h4>
+                    <p className="text-xs md:text-sm font-medium leading-relaxed opacity-60 group-hover:opacity-100">{f.desc}</p>
                   </div>
                 ))}
               </div>
@@ -180,15 +180,15 @@ const App = () => {
         </section>
 
         {/* Stats */}
-        <section id="stats" className="py-48 px-8 md:px-16 border-t border-white/5">
+        <section id="stats" className="py-24 md:py-48 px-4 md:px-8 lg:px-16 border-t border-white/5">
            <div className="max-w-7xl mx-auto">
-              <div className="grid md:grid-cols-3 gap-24">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24">
                  {siteConfig.stats.map((stat, i) => (
                    <div key={i} className="text-center">
-                      <div className="text-8xl md:text-[140px] font-black text-accent leading-none mb-8">
+                      <div className="text-6xl md:text-8xl lg:text-[140px] font-black text-accent leading-none mb-4 md:mb-8">
                          {stat.value}
                       </div>
-                      <p className="text-[11px] font-black uppercase tracking-[0.5em] opacity-40 max-w-[200px] mx-auto">
+                      <p className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.3em] md:tracking-[0.5em] opacity-40 max-w-[200px] mx-auto">
                          {stat.label}
                       </p>
                    </div>
